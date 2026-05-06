@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khám Phá Vùng Miền - Chi Tiết</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="detail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body class="detail-page">
+    <!-- Sidebar -->
+    <aside class="detail-sidebar">
+        <div class="sidebar-header">
+            <h2 id="sidebarTitle">Thành phố</h2>
+        </div>
+        
+        <nav class="cities-list" id="citiesList">
+            <!-- Danh sách thành phố sẽ được render bằng JavaScript -->
+        </nav>
+
+        <a class="back-btn" id="backBtn" href="index.html">
+            ← Quay lại
+        </a>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="detail-container">
+        <!-- Header -->
+        <header class="detail-header">
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Tìm kiếm..." class="search-input">
+                <span class="search-icon">🔍</span>
+            </div>
+
+            <nav class="categories-nav">
+                <button class="category-tab active" data-category="explore">
+                    📖 Khám Phá
+                </button>
+                <button class="category-tab" data-category="fashion">
+                    👗 Trang Phục (Mua sắm)
+                </button>
+                <button class="category-tab" data-category="food">
+                    🍜 Đồ Ăn (Mua sắm)
+                </button>
+                <button class="category-tab" data-category="souvenirs">
+                    🎁 Quà Lưu Niệm (Mua sắm)
+                </button>
+                <button class="category-tab" data-category="tourism">
+                    ✈️ Du Lịch
+                </button>
+            </nav>
+        </header>
+
+        <!-- Content Area -->
+        <main class="detail-content" id="detailContent">
+            <div class="content-section" id="exploreSection">
+                <h2 id="cityName">Tên Thành Phố</h2>
+                <div class="city-info">
+                    <p id="cityDescription">Mô tả chi tiết về thành phố...</p>
+                </div>
+            </div>
+
+            <div class="content-section hidden" id="fashionSection">
+                <h2>Trang Phục Truyền Thống</h2>
+                <div class="products-grid" id="fashionProducts">
+                    <!-- Sản phẩm sẽ được render bằng JavaScript -->
+                </div>
+            </div>
+
+            <div class="content-section hidden" id="foodSection">
+                <h2>Đặc Sản Ẩm Thực</h2>
+                <div class="products-grid" id="foodProducts">
+                    <!-- Sản phẩm sẽ được render bằng JavaScript -->
+                </div>
+            </div>
+
+            <div class="content-section hidden" id="souvenirsSection">
+                <h2>Quà Lưu Niệm Địa Phương</h2>
+                <div class="products-grid" id="souvenirsProducts">
+                    <!-- Sản phẩm sẽ được render bằng JavaScript -->
+                </div>
+            </div>
+
+            <div class="content-section hidden" id="tourismSection">
+                <h2>Du Lịch & Khám Phá</h2>
+                <div class="tours-grid" id="toursProducts">
+                    <!-- Tour sẽ được render bằng JavaScript -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="detail.js?v=2"></script>
+</body>
+</html>
