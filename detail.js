@@ -71,26 +71,97 @@ const regionData = {
 // Dữ liệu chi tiết cho các thành phố
 const cityDetailsData = {
     "Lào Cai": {
-        description: "Lào Cai là tỉnh biên giới phía Tây Bắc, nổi tiếng với Phan Xi Păng - nóc nhà Đông Dương, núi Fansipan cao 3,143m. Là cửa ngõ giao thương với Trung Quốc, Lào Cai là điểm khởi đầu của con đường tơ lụa cũ. Thành phố Lào Cai là trung tâm hành chính, kinh tế của tỉnh.",
+        description: `<strong>Lào Cai</strong> là vùng đất phong phú về bản sắc văn hóa và thiên nhiên hùng vĩ.<br><br>
+        <strong>Con người và Phong tục tập quán:</strong> Nơi đây là ngôi nhà chung của 25 dân tộc anh em như Mông, Dao, Tày, Giáy... Con người chân chất, mộc mạc và vô cùng hiếu khách. Phong tục tập quán vô cùng đa dạng: từ chợ tình Sa Pa, lễ hội Gầu Tào của người Mông, đến lễ Cấp Sắc của người Dao. Những nét văn hóa này phản ánh trực tiếp lên những bộ <strong>Trang phục</strong> sặc sỡ mà họ mặc hàng ngày hay các loại vải dệt thổ cẩm đầy nghệ thuật.<br><br>
+        <strong>Món ăn đặc sắc:</strong> Sự giao thoa văn hóa tạo nên các <strong>Đồ ăn</strong> độc đáo mang đậm hương vị núi rừng. Các món ăn không chỉ để no mà còn gắn với lịch sử sinh tồn trên núi cao, được dùng để thiết đãi khách quý, thể hiện tinh thần đoàn kết cộng đồng.<br><br>
+        <strong>Khu du lịch và Quà lưu niệm:</strong> Các <strong>Khu du lịch</strong> nổi tiếng như đỉnh Fansipan hùng vĩ, bản Cát Cát hay thung lũng Mường Hoa luôn thu hút khách du lịch. Khi đến đây, bạn có thể dễ dàng tìm mua các <strong>Quà lưu niệm</strong> mang ý nghĩa tâm linh và văn hóa sâu sắc từ các phiên chợ vùng cao.`,
         fashion: [
-            { name: "Thổ cẩm Mông", price: "500.000 - 2.000.000 đ", description: "Vải thổ cẩm truyền thống của dân tộc Mông" },
-            { name: "Áo dài Mông", price: "800.000 - 3.000.000 đ", description: "Áo dài truyền thống với họa tiết độc đáo" },
-            { name: "Quần ngắn Tày", price: "300.000 - 1.000.000 đ", description: "Quần truyền thống của dân tộc Tày" }
+            { 
+                name: "Thổ cẩm dân tộc Mông", 
+                price: "500.000 - 2.000.000 đ", 
+                description: "Vải thổ cẩm dệt thủ công rực rỡ mang đậm dấu ấn người Mông.",
+                imageUrl: "https://images.unsplash.com/photo-1596495578065-6e0763fa1178?q=80&w=400&auto=format&fit=crop",
+                history: "Nghề dệt thổ cẩm của người Mông đã có từ hàng trăm năm trước, truyền từ đời này sang đời khác. Nó từng là thước đo để đánh giá sự khéo léo, chăm chỉ của người phụ nữ Mông trước khi lập gia đình.",
+                ingredients: "Sợi lanh tự nhiên trồng trên nương, sáp ong để vẽ họa tiết, rễ cây rừng và các loại lá cây (như lá chàm) để nhuộm màu.",
+                structure: "Quá trình gồm hàng chục công đoạn: tước sợi lanh, se chỉ, dệt trên khung cửi gỗ, đến vẽ sáp ong tạo hoa văn. Bố cục hoa văn thường đối xứng, hình học hóa các loài cỏ cây, muông thú.",
+                usage: "Dùng để may trang phục truyền thống, chăn, địu trẻ em. Hoa văn thổ cẩm mang ý nghĩa bảo vệ con người khỏi tà ma, thú dữ, và là món quà hồi môn thiêng liêng."
+            },
+            { 
+                name: "Trang phục Dao Đỏ", 
+                price: "800.000 - 3.000.000 đ", 
+                description: "Trang phục với sắc đỏ rực rỡ, thêu hoa văn tinh xảo.",
+                imageUrl: "https://images.unsplash.com/photo-1526304760581-228784b11f32?q=80&w=400&auto=format&fit=crop",
+                history: "Gắn liền với lịch sử sinh sống trên các vùng núi cao của người Dao Đỏ. Trang phục phản ánh nhân sinh quan và tín ngưỡng thờ cúng tổ tiên của dân tộc.",
+                ingredients: "Vải chàm đen làm nền, chỉ thêu nhiều màu (chủ đạo là đỏ, trắng, vàng), cùng các hạt cườm, tua rua và trang sức bạc đính kèm.",
+                structure: "Bao gồm áo dài, quần, yếm, khăn đội đầu và thắt lưng. Kỹ thuật thêu cực kỳ độc đáo: thêu từ mặt trái nhưng hình nổi lên mặt phải rất sắc nét.",
+                usage: "Tác dụng bảo vệ cơ thể ở vùng núi lạnh. Ý nghĩa: Màu đỏ tượng trưng cho ngọn lửa, sự ấm no, hạnh phúc và sức sống mãnh liệt. Nó cũng có ý nghĩa xua đuổi tà khí."
+            }
         ],
         food: [
-            { name: "Cơm lam Mông", price: "50.000 - 150.000 đ", description: "Cơm nếp nấu trong ống tre" },
-            { name: "Lợn cắp nách", price: "150.000 - 500.000 đ", description: "Lợn rừng nướng trên bếp lửa truyền thống" },
-            { name: "Thịt trâu gác bếp", price: "200.000 - 600.000 đ", description: "Thịt trâu khô hun khói" }
+            { 
+                name: "Thịt trâu gác bếp", 
+                price: "200.000 - 600.000 đ", 
+                description: "Thịt trâu khô hun khói đậm vị núi rừng.",
+                imageUrl: "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=400&auto=format&fit=crop",
+                history: "Xuất phát từ nhu cầu dự trữ thức ăn qua những mùa đông sương giá, người dân Thái đen, Mông đã sáng tạo ra phương pháp sấy khô thịt bằng khói bếp để bảo quản được lâu tháng.",
+                ingredients: "Thịt bắp của trâu bản (nuôi thả rông), hạt mắc khén (tiêu rừng), hạt dổi, tỏi, ớt, gừng, muối.",
+                structure: "Thịt được thái dọc thớ thành từng miếng dài, ướp gia vị đặc trưng trong vài giờ. Sau đó xiên vào que tre và treo lên gác bếp, hun bằng khói từ củi gỗ rừng trong nhiều tuần cho đến khi khô lại, bên ngoài đen hóng nhưng bên trong đỏ hồng.",
+                usage: "Tác dụng: Thức ăn dự trữ giàu đạm cho những ngày đông giá rét. Ý nghĩa: Món ăn đặc trưng thết đãi khách quý, tượng trưng cho sự trù phú và lòng hiếu khách của người vùng cao."
+            },
+            { 
+                name: "Cơm lam nướng", 
+                price: "50.000 - 150.000 đ", 
+                description: "Cơm nếp nướng trong ống tre dẻo thơm.",
+                imageUrl: "https://images.unsplash.com/photo-1626200419189-3b58941bb335?q=80&w=400&auto=format&fit=crop",
+                history: "Ra đời từ thói quen đi rừng, làm nương dài ngày. Để tiện lợi, người bản địa dùng luôn ống nứa có sẵn trong rừng để nấu ăn thay cho nồi niêu cồng kềnh.",
+                ingredients: "Gạo nếp nương dẻo thơm, ống tre/nứa/bương còn tươi (có lóng nước bên trong), lá chuối hoặc lá dong.",
+                structure: "Gạo vo sạch ngâm nước vài giờ, cho vào ống tre và chêm thêm chút nước suối. Nút chặt miệng ống bằng lá chuối, nướng xoay đều trên than hồng đến khi vỏ tre cháy xém, nứt ra và tỏa mùi thơm của nếp hòa quyện với tre.",
+                usage: "Tác dụng: Cung cấp năng lượng cho những chuyến đi rừng, giữ được lâu không thiu. Ý nghĩa: Thể hiện sự sáng tạo và hòa hợp tuyệt đối giữa con người và thiên nhiên."
+            }
         ],
         souvenirs: [
-            { name: "Khèn Mông", price: "1.000.000 - 5.000.000 đ", description: "Nhạc cụ truyền thống của dân tộc Mông" },
-            { name: "Thêu Mông", price: "200.000 - 1.000.000 đ", description: "Sản phẩm thêu tay truyền thống" },
-            { name: "Gốm Lào Cai", price: "100.000 - 500.000 đ", description: "Gốm sứ thủ công địa phương" }
+            { 
+                name: "Khèn Mông", 
+                price: "1.000.000 - 5.000.000 đ", 
+                description: "Nhạc cụ hơi bằng trúc, biểu tượng linh hồn người Mông.",
+                imageUrl: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=400&auto=format&fit=crop",
+                history: "Là nhạc cụ lâu đời, gắn bó máu thịt với đời sống văn hóa, tâm linh của đàn ông dân tộc Mông.",
+                ingredients: "Gỗ quý làm bầu khèn, 6 ống trúc với độ dài ngắn khác nhau tạo âm, và vỏ cây anh đào để nẹp.",
+                structure: "Bầu khèn khoét rỗng, cắm 6 ống trúc xuyên qua. Mỗi ống có lam đồng (lưỡi gà) tạo ra âm thanh khi thổi và hít khí.",
+                usage: "Tác dụng/Ý nghĩa: Dùng để thổi trong các dịp lễ hội, chợ tình để các chàng trai gọi bạn tình. Trong tang ma, tiếng khèn là phương tiện giao tiếp với cõi âm, dẫn đường cho linh hồn người chết về với tổ tiên. Khèn là biểu tượng của sức mạnh, tài hoa của đàn ông Mông."
+            },
+            { 
+                name: "Trang sức bạc chạm khắc", 
+                price: "500.000 - 2.000.000 đ", 
+                description: "Vòng cổ, vòng tay bạc được chạm trổ thủ công.",
+                imageUrl: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=400&auto=format&fit=crop",
+                history: "Nghề chạm bạc truyền thống của người Mông, Dao đã có từ lâu đời, được các nghệ nhân truyền tay nhau.",
+                ingredients: "Bạc nguyên chất (thường được nấu chảy từ bạc vụn hoặc đồng xu bạc cũ).",
+                structure: "Bạc được nung chảy, đổ khuôn, sau đó qua các công đoạn kéo sợi, dát mỏng, chạm khắc các họa tiết hoa lá, chim muông cực kỳ tỉ mỉ.",
+                usage: "Tác dụng/Ý nghĩa: Tôn vinh vẻ đẹp phụ nữ vùng cao. Theo tín ngưỡng, bạc kỵ gió, trừ tà ma, bảo vệ sức khỏe người đeo. Đồng thời nó cũng là tài sản tiết kiệm và quà hồi môn vô giá."
+            }
         ],
         tours: [
-            { name: "Tour Fansipan - 2 ngày 1 đêm", price: "1.500.000 đ/người", description: "Chinh phục nóc nhà Đông Dương, tham quan Mộc Châu" },
-            { name: "Tour Cấp Cao - 1 ngày", price: "500.000 đ/người", description: "Tham quan bản làng, trải nghiệm cuộc sống dân tộc" },
-            { name: "Tour Chợ Đêm Lào Cai - nửa ngày", price: "300.000 đ/người", description: "Khám phá chợ đêm, ẩm thực địa phương" }
+            { 
+                name: "Tour Cáp treo Fansipan - Nóc nhà Đông Dương", 
+                price: "1.200.000 đ/người", 
+                description: "Hành trình chinh phục đỉnh Fansipan cao 3.143m bằng hệ thống cáp treo hiện đại, ngắm toàn cảnh thung lũng Mường Hoa, dãy Hoàng Liên Sơn hùng vĩ ẩn hiện trong mây biển.",
+                imageUrl: "https://images.unsplash.com/photo-1549487508-251f224976fa?q=80&w=400&auto=format&fit=crop",
+                history: "Fansipan từ lâu là mơ ước của những người mê leo núi. Từ năm 2016, hệ thống cáp treo hiện đại đã giúp mọi người dễ dàng chạm tay vào đỉnh cao này.",
+                ingredients: "Tour bao gồm vé cáp treo khứ hồi, vé tàu hỏa leo núi (tuỳ chọn), và hướng dẫn viên điểm.",
+                structure: "Lịch trình: Di chuyển từ trung tâm Sa Pa -> Ga Hoàng Liên -> Đi cáp treo xuyên mây -> Khu du lịch tâm linh (Chùa Trình) -> Leo bộ hoặc đi tàu hỏa lên Đỉnh Fansipan -> Check-in cột mốc -> Trở về.",
+                usage: "Tác dụng/Ý nghĩa: Giúp du khách vượt qua giới hạn, chiêm ngưỡng vẻ đẹp ngoạn mục và thêm tự hào về thiên nhiên đất nước Việt Nam."
+            },
+            { 
+                name: "Tour Trekking Bản Cát Cát - Tả Van", 
+                price: "500.000 đ/người", 
+                description: "Đi bộ xuyên qua các ruộng bậc thang tuyệt đẹp, thăm bản làng của người Mông và người Giáy. Trải nghiệm trực tiếp cuộc sống bản địa.",
+                imageUrl: "https://images.unsplash.com/photo-1506452814470-3ef0c0d165f1?q=80&w=400&auto=format&fit=crop",
+                history: "Bắt nguồn từ sự phát triển của du lịch sinh thái cộng đồng, đưa du khách về với thiên nhiên nguyên sơ.",
+                ingredients: "Hướng dẫn viên bản địa am hiểu văn hóa, phí tham quan các bản, và một bữa ăn trưa đặc sản vùng cao.",
+                structure: "Lịch trình: Trung tâm Sa Pa -> Bản Cát Cát ngắm thác nước và nghề dệt thổ cẩm -> Đi bộ men theo thung lũng Mường Hoa ngoạn mục -> Bản Tả Van của người Giáy -> Dùng bữa trưa -> Quay về.",
+                usage: "Tác dụng/Ý nghĩa: Tôn vinh văn hóa bản địa, đem lại thu nhập bền vững cho người dân địa phương và mang lại góc nhìn sống động nhất cho du khách về văn hóa vùng cao."
+            }
         ]
     },
     "Yên Bái": {
@@ -113,25 +184,70 @@ const cityDetailsData = {
         ]
     },
     "Hà Nội": {
-        description: "Hà Nội - thủ đô của Việt Nam, thành phố lịch sử hàng ngàn năm. Là tâm điểm chính trị, kinh tế, văn hóa của đất nước. Hà Nội nổi tiếng với Hồ Tây, Phố Cổ, văn hóa trà chiều, ẩm thực đa dạng.",
+        description: `<strong>HÀ NỘI - Thủ Đô Ngàn Năm Văn Hiến</strong><br><br>
+        <strong>Khám Phá:</strong> Hà Nội là trái tim của cả nước, nổi tiếng với lịch sử lâu đời, 36 phố phường rêu phong và nền văn hóa đậm đà bản sắc. Người Hà Nội thanh lịch, tinh tế trong cả lời ăn tiếng nói và nếp sống. Nơi đây có Hồ Gươm, Lăng Bác, Văn Miếu Quốc Tử Giám và những mùa hoa đặc trưng tạo nên nét lãng mạn rất riêng.`,
         fashion: [
-            { name: "Áo dài Việt cổ điển", price: "500.000 - 3.000.000 đ", description: "Áo dài truyền thống Hà Nội" },
-            { name: "Khăn Hà Nội", price: "50.000 - 200.000 đ", description: "Khăn lụa truyền thống Hà Nội" }
+            { 
+                name: "Áo dài truyền thống", 
+                price: "500.000 - 3.000.000 đ", 
+                description: "Áo dài thanh lịch, gắn liền với hình ảnh người con gái Tràng An.",
+                imageUrl: "https://images.unsplash.com/photo-1550614000-4b95d4ed1ab5?q=80&w=400&auto=format&fit=crop",
+                history: "Trải qua nhiều thời kỳ từ áo giao lĩnh, áo tứ thân, đến áo dài Le Mur và áo dài hiện đại ngày nay. Gắn liền với hình ảnh người con gái Tràng An.",
+                ingredients: "Cắt may bằng lụa tơ tằm, gấm (như lụa Vạn Phúc).",
+                structure: "Tà áo ôm vừa vặn, xẻ hông bay bổng, mặc cùng quần lụa ống rộng.",
+                usage: "Ý nghĩa: Biểu tượng của vẻ đẹp đoan trang, kín đáo, thanh tao và niềm tự hào về quốc phục của Việt Nam."
+            }
         ],
         food: [
-            { name: "Phở Hà Nội", price: "50.000 - 150.000 đ/tô", description: "Phở bò Hà Nội nổi tiếng" },
-            { name: "Bún chả Hà Nội", price: "40.000 - 120.000 đ", description: "Bún chả với thịt nướng than" },
-            { name: "Cốm làng Vòng", price: "100.000 - 500.000 đ/hộp", description: "Cốm xanh thơm ngon của Hà Nội" }
+            { 
+                name: "Phở Bò", 
+                price: "50.000 - 150.000 đ", 
+                description: "Tinh hoa ẩm thực Hà Nội với nước dùng ngọt thanh từ xương bò.",
+                imageUrl: "https://images.unsplash.com/photo-1555126634-323283e090fa?q=80&w=400&auto=format&fit=crop",
+                history: "Phở xuất hiện từ đầu thế kỷ 20, là sự kết hợp giữa kỹ thuật hầm xương bò của Pháp và gia vị, bánh phở gạo của Việt Nam.",
+                ingredients: "Xương ống bò, quế, hồi, thảo quả, gừng nướng, bánh phở gạo, thịt bò, hành hoa.",
+                structure: "Nước dùng hầm từ xương ống bò trong 10-12 tiếng, thêm quế, hồi, thảo quả, gừng nướng. Bánh phở mỏng dai, thịt bò thái lát mỏng, rắc thêm hành hoa.",
+                usage: "Ý nghĩa: Tinh hoa ẩm thực Việt Nam, đại diện cho sự cầu kỳ, tinh tế trong cách nêm nếm gia vị của người Hà Thành."
+            },
+            {
+                name: "Bún chả Hà Nội",
+                price: "40.000 - 120.000 đ",
+                description: "Thịt lợn nướng than hoa ăn kèm bún và nước mắm chua ngọt.",
+                imageUrl: "https://images.unsplash.com/photo-1555126634-323283e090fa?q=80&w=400&auto=format&fit=crop",
+                history: "Là món ăn bình dị lâu đời của người dân thủ đô, nổi tiếng với kỹ thuật quạt chả bằng than hoa.",
+                ingredients: "Thịt lợn (ba chỉ và nạc vai), nước mắm, đường, dấm, đu đủ xanh, bún tươi, rau sống.",
+                structure: "Thịt được tẩm ướp đậm đà, nướng thơm lừng xém cạnh. Nước chấm pha chua ngọt tinh tế cùng su hào, đu đủ giòn sần sật.",
+                usage: "Ý nghĩa: Thể hiện nét ẩm thực tinh tế, hài hòa về hương vị và màu sắc, trở thành biểu tượng ẩm thực đường phố Hà Nội."
+            }
         ],
         souvenirs: [
-            { name: "Gốm Bát Tràng", price: "100.000 - 1.000.000 đ", description: "Gốm sứ truyền thống Bát Tràng" },
-            { name: "Tranh Dông Hồ", price: "50.000 - 500.000 đ", description: "Tranh phủ sắc của làng Dông Hồ" },
-            { name: "Trà sen Hà Nội", price: "200.000 - 1.000.000 đ/hộp", description: "Trà sen tươi thơm" }
+            { 
+                name: "Cốm làng Vòng", 
+                price: "100.000 - 300.000 đ", 
+                description: "Hạt cốm non xanh mát gói trong lá sen.",
+                imageUrl: "https://images.unsplash.com/photo-1605389649576-905a5a730c49?q=80&w=400&auto=format&fit=crop",
+                history: "Đặc sản lâu đời của làng Vòng (Cầu Giấy, Hà Nội).",
+                ingredients: "Lúa nếp non, lá sen để gói.",
+                structure: "Lúa non được rang chín tới, giã dẹp, sàng sảy kỹ lưỡng, giữ lại màu xanh tự nhiên và hương thơm thoang thoảng.",
+                usage: "Lịch sử & Ý nghĩa: Cốm là tinh hoa của lúa non, gắn liền với mùa thu Hà Nội. Nó là món quà gói trọn sự thanh tao, hương vị đồng quê của mảnh đất thủ đô."
+            },
+            {
+                name: "Gốm sứ Bát Tràng",
+                price: "100.000 - 1.000.000 đ",
+                description: "Đồ gốm thủ công nghệ thuật tinh xảo.",
+                imageUrl: "https://images.unsplash.com/photo-1605389649576-905a5a730c49?q=80&w=400&auto=format&fit=crop",
+                history: "Làng gốm có lịch sử hàng trăm năm, lưu giữ tinh hoa nghề gốm cổ truyền.",
+                ingredients: "Đất sét trắng, men gốm tự nhiên.",
+                structure: "Được nhào nặn thủ công, nung ở nhiệt độ cao, vẽ các hoa văn đậm chất văn hóa Việt.",
+                usage: "Ý nghĩa: Quà lưu niệm mang giá trị văn hóa, nghệ thuật cao, biểu trưng cho sự trường tồn và đôi tay khéo léo của nghệ nhân Hà Thành."
+            }
         ],
         tours: [
-            { name: "Tour Phố Cổ Hà Nội - nửa ngày", price: "400.000 đ/người", description: "Khám phá phố cổ và chợ Đêm Hàng Đồng" },
-            { name: "Tour Hồ Tây - 1 ngày", price: "500.000 đ/người", description: "Tham quan Hồ Tây, chùa Trấn Quốc, đảo Gỗ" },
-            { name: "Tour Hoàng Thành Thăng Long - 1 ngày", price: "600.000 đ/người", description: "Du lịch các di tích lịch sử Hoàng Thành" }
+            { name: "Hanoi City Tour: Lăng Bác - Văn Miếu - Phố Cổ (1 ngày)", price: "650.000 VNĐ/khách", description: "Khám phá các di tích lịch sử tiêu biểu của Hà Nội." },
+            { name: "Tour tham quan Làng gốm Bát Tràng - Làng lụa Vạn Phúc", price: "500.000 VNĐ/khách", description: "Tìm hiểu các làng nghề truyền thống lâu đời." },
+            { name: "Food Tour Phố Cổ & xem múa rối nước", price: "700.000 VNĐ/khách", description: "Thưởng thức tinh hoa ẩm thực đường phố và nghệ thuật dân gian." },
+            { name: "Tour nghỉ dưỡng Vườn quốc gia Ba Vì - Làng văn hóa các dân tộc", price: "900.000 VNĐ/khách", description: "Khám phá thiên nhiên và văn hóa các dân tộc Việt Nam." },
+            { name: "Tour xe bus 2 tầng ngắm Hà Nội đêm", price: "150.000 VNĐ/khách", description: "Trải nghiệm ngắm phố phường Hà Nội lung linh từ trên cao." }
         ]
     },
     "Đà Nẵng": {
@@ -156,45 +272,127 @@ const cityDetailsData = {
         ]
     },
     "Hồ Chí Minh": {
-        description: "Hồ Chí Minh - thành phố lớn nhất Việt Nam, trung tâm kinh tế sôi động. Nơi giao thoa của nhiều nền văn hóa, ẩm thực phong phú, du lịch sầm uất. Thành phố có tốc độ phát triển nhanh nhất.",
+        description: `<strong>HỒ CHÍ MINH - Thành Phố Không Ngủ</strong><br><br>
+        <strong>Khám Phá:</strong> Hồ Chí Minh (Sài Gòn) là trung tâm kinh tế, văn hóa năng động nhất cả nước. Con người nơi đây phóng khoáng, cởi mở và dễ tiếp nhận cái mới. Sài Gòn là sự giao thoa văn hóa đa dạng (Hoa, Chăm, Khmer, Âu, Mỹ...). Những địa điểm không thể bỏ qua gồm: Chợ Bến Thành, Dinh Độc Lập, Nhà thờ Đức Bà, Địa đạo Củ Chi và các khu phố ẩm thực sầm uất.`,
         fashion: [
-            { name: "Áo dài hiện đại", price: "600.000 - 3.000.000 đ", description: "Áo dài với kiểu dáng hiện đại" },
-            { name: "Thời trang Việt Nam", price: "200.000 - 1.000.000 đ", description: "Quần áo địa phương, công xưởng Sài Gòn" }
+            { 
+                name: "Áo dài Tân thời (Áo dài Sài Gòn)", 
+                price: "600.000 - 3.000.000 đ", 
+                description: "Áo dài mang vẻ đẹp hiện đại, thanh lịch của phụ nữ Sài Gòn.",
+                imageUrl: "https://images.unsplash.com/photo-1550614000-4b95d4ed1ab5?q=80&w=400&auto=format&fit=crop",
+                history: "Từ những năm 1930 (áo dài Lemur) đến những năm 1960 với sự ra đời của áo dài tay raglan tại tiệm may Dung (Đakao, Sài Gòn), giúp áo dài ôm sát đường cong mà không bị nhăn nách.",
+                ingredients: "May đo thủ công từ các chất liệu như lụa, voan, gấm.",
+                structure: "Đường cắt cúp tinh tế, tà dài, cổ cao hoặc cổ thuyền để tạo sự thoải mái và quyến rũ.",
+                usage: "Ý nghĩa: Tôn vinh nét đẹp hiện đại, thanh lịch nhưng vẫn quyến rũ của phụ nữ Việt Nam, là biểu tượng thời trang vươn tầm quốc tế."
+            }
         ],
         food: [
-            { name: "Bánh mì Sài Gòn", price: "20.000 - 60.000 đ", description: "Bánh mì thơm ngon nổi tiếng" },
-            { name: "Cơm tấm", price: "30.000 - 80.000 đ", description: "Cơm tấm sườn nướng" },
-            { name: "Canh chua cá", price: "50.000 - 150.000 đ", description: "Canh chua cá miền Nam" }
+            { 
+                name: "Cơm tấm Sài Gòn", 
+                price: "30.000 - 80.000 đ", 
+                description: "Món ăn đặc trưng của Sài Gòn với sườn nướng than hoa thơm lừng.",
+                imageUrl: "https://images.unsplash.com/photo-1555126634-323283e090fa?q=80&w=400&auto=format&fit=crop",
+                history: "Ban đầu là món ăn sáng của tầng lớp lao động nghèo (dùng gạo nứt vỡ). Sau này được thêm thắt nhiều nguyên liệu và trở thành đặc sản nổi tiếng.",
+                ingredients: "Gạo tấm, sườn heo, bì heo, chả trứng, trứng ốp la, mỡ hành, nước mắm.",
+                structure: "Gạo tấm đồ chín tới. Đồ ăn kèm gồm: sườn nướng than hoa (ướp mật ong, sả), bì cuốn, chả trứng, trứng ốp la, mỡ hành và chén nước mắm kẹo chua ngọt.",
+                usage: "Ý nghĩa: Tượng trưng cho sự sáng tạo, bình dân nhưng lại rất phong phú, mang đậm nhịp sống hối hả nhưng thực dụng của người Sài Gòn."
+            },
+            {
+                name: "Bánh mì Sài Gòn",
+                price: "20.000 - 60.000 đ",
+                description: "Ổ bánh mì giòn rụm với nhân đa dạng, ngon nức tiếng thế giới.",
+                imageUrl: "https://images.unsplash.com/photo-1555126634-323283e090fa?q=80&w=400&auto=format&fit=crop",
+                history: "Có nguồn gốc từ bánh mì Baguette của Pháp, được biến tấu phù hợp với khẩu vị người Việt.",
+                ingredients: "Bánh mì, chả lụa, thịt nguội, pate, bơ, dưa leo, ngò rí, đồ chua.",
+                structure: "Bánh mì nướng giòn xẻ dọc, phết bơ và pate, nhồi các loại thịt, chả, thêm rau dưa và chút xíu nước tương hay tương ớt.",
+                usage: "Ý nghĩa: Biểu tượng cho sự giao thoa văn hóa ẩm thực nhanh gọn, tiện lợi và hương vị bùng nổ, phù hợp với nhịp sống năng động."
+            }
         ],
         souvenirs: [
-            { name: "Sản phẩm mỹ nghệ", price: "100.000 - 1.000.000 đ", description: "Các sản phẩm thủ công mỹ nghệ Sài Gòn" },
-            { name: "Cà phê Sài Gòn", price: "100.000 - 300.000 đ/gói", description: "Cà phê chất lượng cao" }
+            { 
+                name: "Cà phê phin Sài Gòn", 
+                price: "100.000 - 300.000 đ", 
+                description: "Cà phê đậm đà bản sắc văn hóa vỉa hè Sài Gòn.",
+                imageUrl: "https://images.unsplash.com/photo-1605389649576-905a5a730c49?q=80&w=400&auto=format&fit=crop",
+                history: "Cà phê theo chân người Pháp vào Sài Gòn và tạo nên 'văn hóa cà phê bệt/cà phê vợt'.",
+                ingredients: "Hạt cà phê Robusta/Arabica rang xay mộc.",
+                structure: "Pha qua chiếc phin nhôm truyền thống, chắt từng giọt đắng ngắt, thêm chút sữa đặc ngọt ngào và đá lạnh xua tan nắng nóng.",
+                usage: "Lịch sử & Ý nghĩa: Tặng cà phê là trao tặng sự tỉnh táo, sự kết nối bạn bè và văn hóa hè phố đặc trưng của Sài Gòn."
+            },
+            {
+                name: "Đồ thủ công mỹ nghệ sơn mài",
+                price: "300.000 - 2.000.000 đ",
+                description: "Nghệ thuật sơn mài tinh xảo đậm chất Á Đông.",
+                imageUrl: "https://images.unsplash.com/photo-1605389649576-905a5a730c49?q=80&w=400&auto=format&fit=crop",
+                history: "Nghề thủ công đòi hỏi sự kiên nhẫn và tinh tế cao.",
+                ingredients: "Nhựa cây sơn, gỗ, vỏ trai, vàng lá, bạc lá.",
+                structure: "Nhiều lớp sơn được phủ lên, mài nhẵn, cẩn vỏ trứng hoặc trai tạo thành các bức tranh, hộp quà đẹp mắt.",
+                usage: "Ý nghĩa: Thể hiện sự tinh hoa của đôi bàn tay người thợ thủ công, mang giá trị thẩm mỹ và trang trí cao."
+            }
         ],
         tours: [
-            { name: "Tour Chợ Bến Thành - nửa ngày", price: "400.000 đ/người", description: "Khám phá chợ Bến Thành lịch sử" },
-            { name: "Tour Dinh Độc Lập - 1 ngày", price: "500.000 đ/người", description: "Tham quan di tích lịch sử Sài Gòn" },
-            { name: "Tour Mekong - 1 ngày", price: "700.000 đ/người", description: "Tham quan sông Mekong, chợ nổi Cần Thơ" }
+            { name: "City Tour khám phá Sài Gòn lịch sử (Nửa ngày)", price: "450.000 VNĐ/khách", description: "Khám phá các công trình kiến trúc vượt thời gian của trung tâm Sài Gòn." },
+            { name: "Tour khám phá Địa đạo Củ Chi (Nửa ngày)", price: "550.000 VNĐ/khách", description: "Trải nghiệm hệ thống địa đạo lịch sử vang bóng một thời." },
+            { name: "Tour sinh thái rừng ngập mặn Cần Giờ - Đảo Khỉ", price: "900.000 VNĐ/khách", description: "Trở về với thiên nhiên ngập mặn hoang dã ngay sát thành phố." },
+            { name: "Saigon Food Tour bằng xe máy về đêm", price: "800.000 VNĐ/khách", description: "Vi vu ngõ hẻm thưởng thức trọn vẹn ẩm thực đường phố nhộn nhịp." },
+            { name: "Tour du ngoạn ăn tối trên sông Sài Gòn (Tàu cao cấp)", price: "1.200.000 VNĐ/khách", description: "Tận hưởng bữa tối lãng mạn ngắm thành phố lên đèn từ mặt sông." }
         ]
     },
     "Cần Thơ": {
-        description: "Cần Thơ - thành phố lớn nhất Đồng bằng sông Cửu Long, được gọi là 'Venice của Đông Nam Á'. Nổi tiếng với chợ nổi Cái Răng, cây ăn trái, sông nước và con người hào sảng.",
+        description: `<strong>CẦN THƠ - Đô Thị Sông Nước Miền Tây</strong><br><br>
+        <strong>Khám Phá:</strong> Cần Thơ là trái tim của Đồng bằng sông Cửu Long. Nơi đây mang đậm dấu ấn văn hóa miệt vườn, sông nước với những con người miền Tây "hào sảng", chất phác và vô cùng mến khách. Phong tục tập quán gắn liền với những phiên chợ nổi trên sông từ tờ mờ sáng, di chuyển chủ yếu bằng ghe xuồng. Đến đây, bạn sẽ được khám phá Chợ nổi Cái Răng, Bến Ninh Kiều, Cồn Sơn và những vườn trái cây trĩu quả quanh năm.`,
         fashion: [
-            { name: "Áo bà ba miền Tây", price: "150.000 - 500.000 đ", description: "Áo bà ba truyền thống miền Tây" },
-            { name: "Áo dài miền Tây", price: "500.000 - 2.000.000 đ", description: "Áo dài với màu sắc đặc trưng" }
+            { 
+                name: "Áo bà ba và khăn rằn", 
+                price: "150.000 - 500.000 đ", 
+                description: "Trang phục truyền thống mộc mạc của người miền Tây.",
+                imageUrl: "https://images.unsplash.com/photo-1596495578065-6e0763fa1178?q=80&w=400&auto=format&fit=crop",
+                history: "Xuất hiện từ thế kỷ 19, được cách tân từ áo ngũ thân để phù hợp với việc lao động vùng sông nước.",
+                ingredients: "Thường được may bằng các loại vải mềm, nhẹ, mau khô như lụa, gấm hoặc nilon.",
+                structure: "Áo có cổ xẻ giữa, cài cúc, hai tà rộng và hai túi to phía trước để đựng đồ.",
+                usage: "Ý nghĩa: Tượng trưng cho vẻ đẹp mộc mạc, dịu dàng và sự tần tảo của người phụ nữ Nam Bộ."
+            }
         ],
         food: [
-            { name: "Lẩu mắm Cần Thơ", price: "150.000 - 400.000 đ", description: "Lẩu mắm Cần Thơ nổi tiếng" },
-            { name: "Bánh xèo", price: "30.000 - 80.000 đ", description: "Bánh xèo giòn rụm" },
-            { name: "Hủ tiếu Nam Vang", price: "40.000 - 100.000 đ", description: "Hủ tiếu với nước lèo đậm đà" }
+            { 
+                name: "Lẩu mắm miền Tây", 
+                price: "150.000 - 400.000 đ", 
+                description: "Đặc sản lẩu đậm đà hương vị sông nước.",
+                imageUrl: "https://images.unsplash.com/photo-1555126634-323283e090fa?q=80&w=400&auto=format&fit=crop",
+                history: "Lẩu mắm ra đời từ thói quen ủ cá làm mắm để dự trữ mùa nước nổi của người dân Nam Bộ.",
+                ingredients: "Nước lẩu nấu từ mắm cá linh, cá sặc chắt lọc kỹ. Ăn kèm hơn 30 loại rau rừng, rau vườn (bông súng, điên điển, rau đắng) và các loại tôm, mực, cá lóc, thịt quay.",
+                structure: "Nước dùng được nấu sôi, nhúng các loại thịt cá và hải sản, sau đó ăn kèm với bún tươi và các loại rau đặc trưng miền Tây.",
+                usage: "Ý nghĩa: Thể hiện sự trù phú của thiên nhiên và tinh thần dung hợp văn hóa ẩm thực Khơ-me, Chăm và Việt."
+            },
+            {
+                name: "Bánh xèo miền Tây",
+                price: "30.000 - 80.000 đ",
+                description: "Bánh xèo vàng ươm, giòn rụm với nhân tôm thịt đậm đà.",
+                imageUrl: "https://images.unsplash.com/photo-1555126634-323283e090fa?q=80&w=400&auto=format&fit=crop",
+                history: "Là món ăn truyền thống dân dã, thường xuất hiện trong các dịp sum họp gia đình hoặc đãi khách.",
+                ingredients: "Bột gạo, nước cốt dừa, bột nghệ, tôm, thịt ba chỉ, giá đỗ, đậu xanh.",
+                structure: "Tráng lớp bột mỏng trên chảo lớn nóng già, cho nhân vào giữa rồi gập đôi khi vỏ bánh vàng giòn.",
+                usage: "Ý nghĩa: Món ăn mang tính cộng đồng cao, thường gói cùng nhiều loại rau sống thể hiện sự gắn kết và trù phú của vườn tược."
+            }
         ],
         souvenirs: [
-            { name: "Quà tặng chợ nổi", price: "100.000 - 500.000 đ", description: "Sản phẩm du lịch từ chợ nổi" },
-            { name: "Mật ong rừng U Minh", price: "200.000 - 800.000 đ/hộp", description: "Mật ong tự nhiên U Minh" }
+            { 
+                name: "Bánh tét lá cẩm gia tộc họ Huỳnh", 
+                price: "100.000 - 200.000 đ", 
+                description: "Đặc sản bánh tét màu tím cực kỳ đẹp mắt và ngon miệng.",
+                imageUrl: "https://images.unsplash.com/photo-1605389649576-905a5a730c49?q=80&w=400&auto=format&fit=crop",
+                history: "Do nghệ nhân Huỳnh Thị Trọng sáng tạo ra vào thập niên 60.",
+                ingredients: "Gạo nếp, nước cốt dừa, lá cẩm, nhân trứng muối, thịt mỡ, đậu xanh.",
+                structure: "Nếp được xào với nước lá cẩm tạo màu tím tự nhiên, gói chặt trong lá chuối cùng với nhân thập cẩm đẫm vị, sau đó luộc chín.",
+                usage: "Lịch sử & Ý nghĩa: Nó mang ý nghĩa cho sự sung túc, đoàn viên trong các dịp lễ Tết, là món quà biếu trân quý mang đậm hương vị miền Tây."
+            }
         ],
         tours: [
-            { name: "Tour Chợ Nổi Cái Răng - sáng sớm", price: "400.000 đ/người", description: "Khám phá chợ nổi nổi tiếng thế giới" },
-            { name: "Tour Sông Mekong - 1 ngày", price: "600.000 đ/người", description: "Tham quan sông Mekong, vườn ăn trái" },
-            { name: "Tour Tây Phương - 2 ngày 1 đêm", price: "1.200.000 đ/người", description: "Khám phá vùng sâu U Minh" }
+            { name: "Tour Chợ nổi Cái Răng - Lò hủ tiếu truyền thống (Nửa ngày)", price: "350.000 VNĐ/khách", description: "Khám phá chợ nổi từ sáng sớm và xem cách làm hủ tiếu." },
+            { name: "Tour sinh thái miệt vườn Cồn Sơn - Xem cá lóc bay", price: "500.000 VNĐ/khách", description: "Trải nghiệm sinh thái tại Cồn Sơn và tiết mục cá lóc bay độc đáo." },
+            { name: "Tour tham quan Nhà cổ Bình Thủy - Vườn cò Bằng Lăng", price: "600.000 VNĐ/khách", description: "Tham quan kiến trúc cổ và khu sinh thái thiên nhiên." },
+            { name: "Tour du thuyền sông Hậu ngắm hoàng hôn & ăn tối", price: "850.000 VNĐ/khách", description: "Tận hưởng không khí lãng mạn trên sông Hậu về đêm." },
+            { name: "Tour trải nghiệm làm nông dân miền Tây (1 ngày)", price: "700.000 VNĐ/khách", description: "Một ngày hóa thân làm nông dân: tát mương bắt cá, hái trái cây." }
         ]
     },
     // Trung du & Miền núi phía Bắc - Các thành phố khác
@@ -401,23 +599,70 @@ const cityDetailsData = {
     },
     // Bắc Trung Bộ & Duyên hải miền Trung - Các thành phố khác
     "Thanh Hóa": {
-        description: "Thanh Hóa là tỉnh lớn vùng Bắc Trung Bộ, nơi sản xuất lúa, muối và thủy sản. Nổi tiếng về các làng nghề truyền thống (gốm Sa Rạ, muối Nghĩa Hưng). Thành phố Thanh Hóa là trung tâm.",
+        description: `<strong>THANH HÓA - Vùng Đất Địa Linh Nhân Kiệt</strong><br><br>
+        <strong>Khám Phá:</strong> Thanh Hóa là dải đất Bắc Trung Bộ, nơi giao thoa giữa núi rừng và biển cả. Người dân xứ Thanh nổi tiếng cần cù, chịu khó và có truyền thống hiếu học, yêu nước. Nơi đây có lịch sử hào hùng với Thành Nhà Hồ (Di sản thế giới), Lam Kinh, cùng cảnh quan tuyệt đẹp như bãi biển Sầm Sơn, khu bảo tồn Pù Luông.`,
         fashion: [
-            { name: "Áo dài Thanh Hóa", price: "500.000 - 2.000.000 đ", description: "Áo dài truyền thống" },
-            { name: "Khăn Thanh Hóa", price: "100.000 - 400.000 đ", description: "Khăn lụa truyền thống" }
+            { 
+                name: "Trang phục dân tộc Thái", 
+                price: "500.000 - 2.000.000 đ", 
+                description: "Áo cóm bó sát và khăn piêu truyền thống duyên dáng.",
+                imageUrl: "https://images.unsplash.com/photo-1550614000-4b95d4ed1ab5?q=80&w=400&auto=format&fit=crop",
+                history: "Trang phục Thái ở Thanh Hóa mang nét đặc trưng của nhóm Thái Đen và Thái Trắng sinh sống lâu đời ở vùng núi Pù Luông.",
+                ingredients: "Vải dệt thủ công nhuộm chàm, các khuy bạc, chỉ thêu nhiều màu.",
+                structure: "Phụ nữ Thái mặc áo cóm (ngắn) bó sát người, hàng khuy bạc hình con bướm, kết hợp váy ống màu đen dài chấm gót, đầu đội khăn piêu thêu rực rỡ.",
+                usage: "Ý nghĩa: Thể hiện sự eo thót, duyên dáng của phụ nữ Thái, chiếc khăn piêu là tình cảm, là tín vật đính ước của lứa đôi."
+            },
+            {
+                name: "Áo tứ thân nâu sòng",
+                price: "300.000 - 800.000 đ",
+                description: "Trang phục lao động của phụ nữ đồng bằng xưa.",
+                imageUrl: "https://images.unsplash.com/photo-1550614000-4b95d4ed1ab5?q=80&w=400&auto=format&fit=crop",
+                history: "Gắn liền với hình ảnh người nông dân ở đồng bằng Bắc Bộ và Bắc Trung Bộ.",
+                ingredients: "Vải thô, đũi nhuộm màu nâu sòng (chiết xuất từ củ nâu).",
+                structure: "Áo khoác ngoài có 4 tà, mặc cùng yếm bên trong và thắt lưng lụa mộc mạc.",
+                usage: "Ý nghĩa: Thể hiện đức tính cần cù, mộc mạc, lam lũ của phụ nữ nông thôn."
+            }
         ],
         food: [
-            { name: "Bánh cuốn Thanh Hóa", price: "30.000 - 80.000 đ", description: "Bánh cuốn tươi thơm" },
-            { name: "Tôm muối Thanh Hóa", price: "150.000 - 400.000 đ", description: "Tôm muối đặc sản" },
-            { name: "Gạo Thanh Hóa", price: "80.000 - 200.000 đ/kg", description: "Gạo chất lượng cao" }
+            { 
+                name: "Nem chua Thanh Hóa", 
+                price: "50.000 - 150.000 đ/chục", 
+                description: "Món nem lên men tự nhiên chua cay mặn ngọt nức tiếng xứ Thanh.",
+                imageUrl: "https://images.unsplash.com/photo-1555126634-323283e090fa?q=80&w=400&auto=format&fit=crop",
+                history: "Xuất hiện từ thời xa xưa như một cách ủ chín thịt để bảo quản lâu ngày, sau này trở thành đặc sản tiến vua và dùng trong mâm cỗ.",
+                ingredients: "Thịt nạc mông heo, bì lợn, thính gạo rang, tỏi, ớt, lá đinh lăng, lá chuối.",
+                structure: "Thịt nạc giã nhuyễn, trộn cùng bì lợn thái chỉ, thính gạo. Gói bằng lá chuối, ép kèm tỏi, ớt, lá đinh lăng, lên men tự nhiên trong 3-5 ngày.",
+                usage: "Ý nghĩa: Mang hương vị hòa quyện, là món quà quê ý nghĩa nhất mọi du khách đều mua về khi ngang qua xứ Thanh, thể hiện sự khéo léo của người làm nêm nếm gia vị."
+            }
         ],
         souvenirs: [
-            { name: "Gốm Sa Rạ", price: "100.000 - 500.000 đ", description: "Gốm thủ công truyền thống" },
-            { name: "Muối Nghĩa Hưng", price: "80.000 - 200.000 đ/kg", description: "Muối trắng chất lượng cao" }
+            { 
+                name: "Đồ đá mỹ nghệ Làng Nhồi", 
+                price: "200.000 - 2.000.000 đ", 
+                description: "Tượng, đồ trang trí tinh xảo điêu khắc từ đá Làng Nhồi.",
+                imageUrl: "https://images.unsplash.com/photo-1605389649576-905a5a730c49?q=80&w=400&auto=format&fit=crop",
+                history: "Đá Nhồi nổi tiếng từ thời Lý-Trần, cung cấp đá để tạc tượng, bia ký cho triều đình.",
+                ingredients: "Đá tự nhiên lấy từ núi Nhồi.",
+                structure: "Đục đẽo, chạm khắc thủ công bởi bàn tay khéo léo tạo hình các linh vật, tượng nghệ thuật.",
+                usage: "Lịch sử & Ý nghĩa: Những bức tượng, đồ chạm khắc mang giá trị nghệ thuật cao, biểu tượng cho sự trường tồn và tài hoa của nghệ nhân xứ Thanh."
+            },
+            {
+                name: "Chè lam Phủ Quảng",
+                price: "50.000 - 150.000 đ/hộp",
+                description: "Bánh ngọt truyền thống thơm mùi gừng và dẻo của nếp.",
+                imageUrl: "https://images.unsplash.com/photo-1605389649576-905a5a730c49?q=80&w=400&auto=format&fit=crop",
+                history: "Có nguồn gốc từ huyện Vĩnh Lộc (Phủ Quảng xưa), là món ăn chống đói và giữ ấm bụng cho nghĩa quân Lam Sơn.",
+                ingredients: "Bột gạo nếp rang, mật mía, mạch nha, gừng tươi, lạc rang.",
+                structure: "Mật mía được cô đặc, trộn cùng bột nếp và gia vị, nhào mịn rồi cắt miếng hình chữ nhật.",
+                usage: "Ý nghĩa: Gói trọn sự ấm áp, ngọt ngào, món quà dân dã thấm đượm tình quê."
+            }
         ],
         tours: [
-            { name: "Tour Tuyệt vời Huyền - 1 ngày", price: "550.000 đ/người", description: "Tham quan các điểm du lịch Thanh Hóa" },
-            { name: "Tour làng gốm Sa Rạ - nửa ngày", price: "400.000 đ/người", description: "Khám phá làng gốm truyền thống" }
+            { name: "Tour nghỉ dưỡng biển Sầm Sơn - Hòn Trống Mái (2N1Đ)", price: "1.500.000 VNĐ/khách", description: "Hòa mình vào làn sóng biển xanh mát và chiêm ngưỡng danh thắng Hòn Trống Mái." },
+            { name: "Tour sinh thái Pù Luông - Mùa lúa chín (2N1Đ)", price: "2.200.000 VNĐ/khách", description: "Trải nghiệm không gian hoang sơ, yên bình bên những thửa ruộng bậc thang kỳ vĩ." },
+            { name: "Tour khám phá Di sản Thành Nhà Hồ - Suối cá thần Cẩm Lương", price: "800.000 VNĐ/khách", description: "Tham quan di sản thế giới độc đáo và suối cá linh thiêng." },
+            { name: "Tour du lịch về nguồn Khu di tích lịch sử Lam Kinh", price: "600.000 VNĐ/khách", description: "Tìm hiểu hào khí Lam Sơn và những vị vua anh minh thời Hậu Lê." },
+            { name: "Tour khám phá Vườn quốc gia Bến En (Hạ Long trên cạn)", price: "900.000 VNĐ/khách", description: "Du ngoạn hồ tự nhiên rộng lớn bao quanh là rừng xanh bạt ngàn." }
         ]
     },
     "Nghệ An": {
@@ -522,23 +767,70 @@ const cityDetailsData = {
     },
     // Tây Nguyên - Các thành phố khác
     "Kon Tum": {
-        description: "Kon Tum là tỉnh cao nguyên vùng Tây Nguyên, nơi sinh sống của các dân tộc Êđê, Giarai, Bana. Nổi tiếng về cảnh sắc thiên nhiên hoang sơ, các làng truyền thống. Thành phố Kon Tum là trung tâm.",
+        description: `<strong>KON TUM - Đại Ngàn Huyền Bí</strong><br><br>
+        <strong>Khám Phá:</strong> Kon Tum mang vẻ đẹp hoang sơ của Tây Nguyên với những cánh rừng bạt ngàn. Đây là nơi sinh sống của các dân tộc Ba Na, Gia Rai, Xơ Đăng... Con người sống chân chất, gắn bó với đại ngàn. Phong tục nổi bật là lễ hội cồng chiêng, sinh hoạt cộng đồng tại Nhà Rông. Các điểm du lịch: Măng Đen, Ngã ba Đông Dương, Nhà thờ Gỗ Kon Tum.`,
         fashion: [
-            { name: "Trang phục Êđê", price: "800.000 - 3.000.000 đ", description: "Trang phục truyền thống Êđê" },
-            { name: "Trang phục Giarai", price: "800.000 - 3.000.000 đ", description: "Trang phục truyền thống Giarai" }
+            { 
+                name: "Vải Thổ cẩm Tây Nguyên", 
+                price: "500.000 - 2.000.000 đ", 
+                description: "Vải dệt tay với các hoa văn biểu tượng của núi rừng.",
+                imageUrl: "https://images.unsplash.com/photo-1550614000-4b95d4ed1ab5?q=80&w=400&auto=format&fit=crop",
+                history: "Nghề dệt thổ cẩm truyền đời từ các thế hệ phụ nữ dân tộc thiểu số, là thước đo sự khéo léo của người con gái trước khi lấy chồng.",
+                ingredients: "Dệt từ sợi bông tự nhiên. Nhuộm màu từ rễ cây, vỏ cây, lá rừng (chủ yếu màu đen, đỏ, vàng).",
+                structure: "Dệt thủ công bằng khung cửi gỗ, tạo các hoa văn dệt nổi tỉ mỉ thành từng dải màu tương phản mạnh mẽ.",
+                usage: "Ý nghĩa: Mỗi hoa văn thể hiện thế giới quan về thiên nhiên, thần linh, sự giao hòa giữa đất và trời của người Tây Nguyên."
+            }
         ],
         food: [
-            { name: "Cơm lam Tây Nguyên", price: "50.000 - 150.000 đ", description: "Cơm nếp truyền thống" },
-            { name: "Gà nướng bản Tây Nguyên", price: "200.000 - 500.000 đ", description: "Gà nướng truyền thống" },
-            { name: "Thịt rừng Tây Nguyên", price: "250.000 - 600.000 đ", description: "Thịt rừng gác bếp" }
+            { 
+                name: "Gỏi lá Kon Tum", 
+                price: "150.000 - 300.000 đ", 
+                description: "Món cuốn độc đáo kết hợp từ hàng chục loại lá rừng thanh mát.",
+                imageUrl: "https://images.unsplash.com/photo-1555126634-323283e090fa?q=80&w=400&auto=format&fit=crop",
+                history: "Gỏi lá bắt nguồn từ người bản địa tận dụng nguồn lá rừng phong phú làm món ăn sống thanh mát, giải nhiệt.",
+                ingredients: "Khoảng 40-50 loại lá (đinh lăng, sung, mơ, hồng ngọc...), thịt ba chỉ luộc, tôm rang, bì lợn.",
+                structure: "Lá được cuốn thành hình phễu, cho thịt tôm vào và chấm loại nước cốt đặc biệt làm từ hèm rượu, trứng, thịt băm.",
+                usage: "Ý nghĩa: Tinh hoa của núi rừng, là bài thuốc tự nhiên tốt cho sức khỏe và thể hiện sự hiếu khách khi thết đãi bạn bè."
+            },
+            {
+                name: "Gà nướng Măng Đen",
+                price: "250.000 - 400.000 đ",
+                description: "Gà đồi nướng than hoa thơm nức mũi ăn cùng cơm lam.",
+                imageUrl: "https://images.unsplash.com/photo-1555126634-323283e090fa?q=80&w=400&auto=format&fit=crop",
+                history: "Là món ăn truyền thống của người Mơ Nâm vùng Măng Đen.",
+                ingredients: "Gà bản địa, lá tiêu rừng, sả, hành tỏi, mật ong rừng.",
+                structure: "Gà được ướp với các loại lá rễ rùng, kẹp vào thanh tre nướng xém trên than củi cho đến khi da vàng rộm.",
+                usage: "Ý nghĩa: Bữa ăn thấm đượm hương vị đại ngàn, sưởi ấm trong cái se lạnh của cao nguyên."
+            }
         ],
         souvenirs: [
-            { name: "Sản phẩm Êđê", price: "200.000 - 1.000.000 đ", description: "Thêu tay dân tộc Êđê" },
-            { name: "Cồng chiêng Tây Nguyên", price: "1.000.000 - 5.000.000 đ", description: "Cồng chiêng di sản UNESCO" }
+            { 
+                name: "Rượu cần", 
+                price: "300.000 - 1.000.000 đ/chóe", 
+                description: "Thức uống linh thiêng của đồng bào Tây Nguyên.",
+                imageUrl: "https://images.unsplash.com/photo-1605389649576-905a5a730c49?q=80&w=400&auto=format&fit=crop",
+                history: "Gắn bó với đời sống tín ngưỡng từ ngàn đời nay, chỉ được đem ra tiếp khách hoặc trong các lễ lớn.",
+                ingredients: "Men lá rừng, nếp nương, bo bo, sắn, ủ trong các chóe đất nung.",
+                structure: "Lên men tự nhiên không qua chưng cất, khi uống dùng những chiếc cần trúc dài cắm thẳng vào chóe.",
+                usage: "Lịch sử & Ý nghĩa: Rượu cần là thức uống linh thiêng, không thể thiếu trong các dịp lễ tết, tế thần. Tặng rượu cần mang ý nghĩa chúc phúc, cầu mong sức khỏe và sự đoàn kết anh em."
+            },
+            {
+                name: "Cà phê Đắk Hà",
+                price: "150.000 - 300.000 đ/gói",
+                description: "Đặc sản cà phê nguyên chất Kon Tum vang danh.",
+                imageUrl: "https://images.unsplash.com/photo-1605389649576-905a5a730c49?q=80&w=400&auto=format&fit=crop",
+                history: "Vùng đất Đắk Hà có thổ nhưỡng vàng để cây cà phê phát triển hoàn hảo.",
+                ingredients: "Hạt cà phê Robusta, Arabica nguyên chất.",
+                structure: "Rang xay thủ công hoặc công nghệ cao giữ lại mùi thơm tự nhiên và vị đậm đà không pha tạp.",
+                usage: "Ý nghĩa: Đánh thức sự tỉnh táo, món quà của sự chia sẻ từ sức lao động cần cù của nông dân vùng cao."
+            }
         ],
         tours: [
-            { name: "Tour bản làng dân tộc - 1 ngày", price: "600.000 đ/người", description: "Tham quan đời sống dân tộc" },
-            { name: "Tour vườn cà phê - nửa ngày", price: "400.000 đ/người", description: "Khám phá vườn cà phê Tây Nguyên" }
+            { name: "Tour săn mây Măng Đen - Nàng thơ đại ngàn (2N1Đ)", price: "1.800.000 VNĐ/khách", description: "Hòa mình vào thị trấn Măng Đen se lạnh và những thác nước hoang sơ." },
+            { name: "Tour tham quan Nhà thờ Gỗ - Cầu treo Kon Klor (Nửa ngày)", price: "300.000 VNĐ/khách", description: "Khám phá kiến trúc độc đáo bằng gỗ và cây cầu vắt ngang sông Đăk Bla." },
+            { name: "Check-in Ngã ba Đông Dương (Việt - Lào - Campuchia)", price: "750.000 VNĐ/khách", description: "Chạm tay vào cột mốc biên giới thiêng liêng của ba nước Đông Dương." },
+            { name: "Tour Trekking khám phá vườn quốc gia Chư Mom Ray", price: "2.500.000 VNĐ/khách", description: "Hành trình thám hiểm rừng rậm nhiệt đới với đa dạng sinh học phong phú." },
+            { name: "Tour trải nghiệm giao lưu Cồng Chiêng và đốt lửa trại tại làng Kon K'tu", price: "600.000 VNĐ/khách", description: "Giao lưu văn hóa bản địa, uống rượu cần bên bếp lửa bập bùng." }
         ]
     },
     "Gia Lai": {
@@ -996,6 +1288,18 @@ function setupEventListeners() {
     document.getElementById('searchInput').addEventListener('keyup', (e) => {
         filterBySearch(e.target.value);
     });
+
+    // Modal close events
+    const modal = document.getElementById('detailModal');
+    const closeBtn = document.getElementById('closeModal');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => modal.classList.add('hidden'));
+    }
+    if (modal) {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) modal.classList.add('hidden');
+        });
+    }
 }
 
 function selectCity(cityName, element) {
@@ -1012,38 +1316,51 @@ function displayCityInfo(cityName) {
     if (!cityData) {
         document.getElementById('cityName').textContent = cityName;
         document.getElementById('cityDescription').textContent = 'Chưa có dữ liệu chi tiết cho thành phố này.';
-        displayProducts('fashionProducts', []);
-        displayProducts('foodProducts', []);
-        displayProducts('souvenirsProducts', []);
+        displayProducts('fashionProducts', [], 'fashion');
+        displayProducts('foodProducts', [], 'food');
+        displayProducts('souvenirsProducts', [], 'souvenirs');
         displayTours('toursProducts', []);
         return;
     }
 
     document.getElementById('cityName').textContent = cityName;
-    document.getElementById('cityDescription').textContent = cityData.description;
+    document.getElementById('cityDescription').innerHTML = cityData.description;
 
     // Hiển thị sản phẩm trang phục
-    displayProducts('fashionProducts', cityData.fashion);
-    displayProducts('foodProducts', cityData.food);
-    displayProducts('souvenirsProducts', cityData.souvenirs);
+    displayProducts('fashionProducts', cityData.fashion, 'fashion');
+    displayProducts('foodProducts', cityData.food, 'food');
+    displayProducts('souvenirsProducts', cityData.souvenirs, 'souvenirs');
     displayTours('toursProducts', cityData.tours);
 }
 
-function displayProducts(elementId, products) {
+function displayProducts(elementId, products, categoryType) {
     const container = document.getElementById(elementId);
     container.innerHTML = '';
     if (!products || !products.length) {
         container.innerHTML = '<p class="detail-text">Chưa có dữ liệu cho mục này.</p>';
         return;
     }
+    
+    // Default image URLs based on category
+    const defaultImages = {
+        'fashion': 'https://images.unsplash.com/photo-1550614000-4b95d4ed1ab5?q=80&w=400&auto=format&fit=crop',
+        'food': 'https://images.unsplash.com/photo-1555126634-323283e090fa?q=80&w=400&auto=format&fit=crop',
+        'souvenirs': 'https://images.unsplash.com/photo-1605389649576-905a5a730c49?q=80&w=400&auto=format&fit=crop',
+        'tours': 'https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=400&auto=format&fit=crop'
+    };
+    const fallbackImage = defaultImages[categoryType] || defaultImages['tours'];
+
     products.forEach(product => {
+        const itemImageUrl = product.imageUrl || fallbackImage;
         const card = document.createElement('div');
         card.classList.add('product-card');
         card.innerHTML = `
+            <img src="${itemImageUrl}" alt="${product.name}" class="product-image">
             <h3>${product.name}</h3>
             <p>${product.description}</p>
             <div class="product-price">${product.price}</div>
         `;
+        card.addEventListener('click', () => openModal(product, itemImageUrl));
         container.appendChild(card);
     });
 }
@@ -1055,16 +1372,63 @@ function displayTours(elementId, tours) {
         container.innerHTML = '<p class="detail-text">Chưa có dữ liệu cho mục này.</p>';
         return;
     }
+    
+    const fallbackImage = 'https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=400&auto=format&fit=crop';
+
     tours.forEach(tour => {
+        const itemImageUrl = tour.imageUrl || fallbackImage;
         const card = document.createElement('div');
         card.classList.add('tour-card');
         card.innerHTML = `
+            <img src="${itemImageUrl}" alt="${tour.name}" class="product-image">
             <h3>${tour.name}</h3>
             <p>${tour.description}</p>
             <div class="tour-price">${tour.price}</div>
         `;
+        card.addEventListener('click', () => openModal(tour, itemImageUrl));
         container.appendChild(card);
     });
+}
+
+function openModal(item, imageUrl) {
+    const modal = document.getElementById('detailModal');
+    if(!modal) return;
+    document.getElementById('modalImage').src = imageUrl;
+    document.getElementById('modalTitle').textContent = item.name;
+    document.getElementById('modalPrice').textContent = item.price;
+    document.getElementById('modalDescription').textContent = item.description;
+    
+    // Cập nhật các trường mở rộng
+    document.getElementById('modalHistory').textContent = item.history || 'Chưa có thông tin về lịch sử phát triển.';
+    document.getElementById('modalIngredients').textContent = item.ingredients || 'Chưa có thông tin về thành phần/nguyên liệu.';
+    document.getElementById('modalStructure').textContent = item.structure || 'Chưa có thông tin về cấu tạo/cách làm.';
+    document.getElementById('modalUsage').textContent = item.usage || 'Chưa có thông tin về tác dụng/ý nghĩa.';
+
+    // Gán sự kiện mua hàng
+    const addToCartBtn = document.getElementById('addToCartBtn');
+    const buyNowBtn = document.getElementById('buyNowBtn');
+    
+    // Clone and replace to remove old event listeners
+    const newAddBtn = addToCartBtn.cloneNode(true);
+    const newBuyBtn = buyNowBtn.cloneNode(true);
+    addToCartBtn.parentNode.replaceChild(newAddBtn, addToCartBtn);
+    buyNowBtn.parentNode.replaceChild(newBuyBtn, buyNowBtn);
+    
+    const cartItem = {
+        name: item.name,
+        price: item.price,
+        imageUrl: imageUrl
+    };
+
+    newAddBtn.addEventListener('click', () => {
+        if(typeof addToCart === 'function') addToCart(cartItem);
+    });
+    
+    newBuyBtn.addEventListener('click', () => {
+        if(typeof buyNow === 'function') buyNow(cartItem);
+    });
+
+    modal.classList.remove('hidden');
 }
 
 function switchCategory(category, element) {

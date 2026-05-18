@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ Hàng - Khám Phá Văn Hóa</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        .cart-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            background: var(--panel-bg);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+        }
+        .cart-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px dashed rgba(255,255,255,0.1);
+        }
+        .cart-item img {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+        .cart-item-info {
+            flex: 1;
+        }
+        .cart-item-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .cart-item-price {
+            color: var(--accent-color);
+        }
+        .cart-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .qty-btn {
+            background: rgba(255,255,255,0.1);
+            border: none;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .remove-btn {
+            background: #ef4444;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 1rem;
+        }
+        .cart-footer {
+            margin-top: 2rem;
+            text-align: right;
+        }
+        .checkout-btn {
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--accent-color), #818cf8);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <div class="cart-container">
+            <div class="cart-header">
+                <h2>🛒 Giỏ Hàng Của Bạn</h2>
+                <a href="index.html" style="color: var(--accent-color); text-decoration: none;">← Tiếp tục mua sắm</a>
+            </div>
+            <div id="cartItems"></div>
+            <div class="cart-footer">
+                <button class="checkout-btn" onclick="checkout()">💳 Thanh Toán Ngay</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="user.js"></script>
+    <script>
+        function renderCart() {
+            const container = document.getElementById('cartItems');
+            if (!STATE.currentUser) {
+                container.innerHTML = '<p>Vui lòng đăng nhập để xem giỏ hàng.</p>';
+                return;
+            }
+            if (STATE.cart.length === 0) {
+                container.innerHTML = '<p>Giỏ hàng đang trống.</p>';
+                return;
+            }
+            
+            container.innerHTML = STATE.cart.map((item, index) => `
+                <div class="cart-item">
+                    <img src="${item.imageUrl || 'https://images.unsplash.com/photo-1550614000-4b95d4ed1ab5?q=80&w=400&auto=format&fit=crop'}" alt="product">
+                    <div class="cart-item-info">
+                        <div class="cart-item-title">${item.name}</div>
+                        <div class="cart-item-price">${item.price}</div>
+                    </div>
+                    <div class="cart-actions">
+                        <button class="qty-btn" onclick="updateQty(${index}, -1)">-</button>
+                        <span>${item.quantity}</span>
+                        <button class="qty-btn" onclick="updateQty(${index}, 1)">+</button>
+                        <button class="remove-btn" onclick="removeItem(${index})">Xóa</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function updateQty(index, delta) {
+            STATE.cart[index].quantity += delta;
+            if (STATE.cart[index].quantity <= 0) {
+                STATE.cart.splice(index, 1);
+            }
+            saveUserData();
+            renderCart();
+        }
+
+        function removeItem(index) {
+            STATE.cart.splice(index, 1);
+            saveUserData();
+            renderCart();
+        }
+
+        function checkout() {
+            if (!STATE.currentUser) return alert("Vui lòng đăng nhập.");
+            if (STATE.cart.length === 0) return alert("Giỏ hàng trống.");
+            
+            const date = new Date().toLocaleString('vi-VN');
+            const order = {
+                date: date,
+                items: [...STATE.cart]
+            };
+            
+            STATE.history.unshift(order);
+            STATE.cart = [];
+            saveUserData();
+            
+            alert("Thanh toán thành công! Cảm ơn bạn.");
+            window.location.href = "history.html";
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(renderCart, 100);
+        });
+    </script>
+</body>
+</html>

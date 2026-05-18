@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lịch Sử Mua Hàng - Khám Phá Văn Hóa</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        .history-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            background: var(--panel-bg);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .history-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+        }
+        .order-card {
+            background: rgba(0,0,0,0.2);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .order-date {
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            border-bottom: 1px dashed rgba(255,255,255,0.1);
+            padding-bottom: 0.5rem;
+        }
+        .order-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        .order-item img {
+            width: 50px;
+            height: 50px;
+            border-radius: 4px;
+            object-fit: cover;
+        }
+        .order-item-info {
+            flex: 1;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <div class="history-container">
+            <div class="history-header">
+                <h2>📜 Lịch Sử Giao Dịch</h2>
+                <a href="index.html" style="color: var(--accent-color); text-decoration: none;">← Về trang chủ</a>
+            </div>
+            <div id="historyItems"></div>
+        </div>
+    </main>
+
+    <script src="user.js"></script>
+    <script>
+        function renderHistory() {
+            const container = document.getElementById('historyItems');
+            if (!STATE.currentUser) {
+                container.innerHTML = '<p>Vui lòng đăng nhập để xem lịch sử.</p>';
+                return;
+            }
+            if (!STATE.history || STATE.history.length === 0) {
+                container.innerHTML = '<p>Chưa có lịch sử mua hàng.</p>';
+                return;
+            }
+            
+            container.innerHTML = STATE.history.map((order) => `
+                <div class="order-card">
+                    <div class="order-date">📅 Thời gian: ${order.date}</div>
+                    ${order.items.map(item => `
+                        <div class="order-item">
+                            <img src="${item.imageUrl || 'https://images.unsplash.com/photo-1550614000-4b95d4ed1ab5?q=80&w=400&auto=format&fit=crop'}" alt="product">
+                            <div class="order-item-info">
+                                <div><strong>${item.name}</strong></div>
+                                <div style="color: var(--text-secondary)">Giá: ${item.price} x ${item.quantity}</div>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            `).join('');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(renderHistory, 100);
+        });
+    </script>
+</body>
+</html>

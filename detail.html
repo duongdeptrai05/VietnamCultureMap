@@ -91,6 +91,45 @@
         </main>
     </div>
 
+    <!-- Modal Chi Tiết -->
+    <div id="detailModal" class="modal hidden">
+        <div class="modal-content modal-large">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <div class="modal-body-scroll">
+                <img id="modalImage" src="" alt="Product Image" class="modal-image">
+                <h2 id="modalTitle">Tên Dịch Vụ</h2>
+                <div class="modal-price" id="modalPrice">Giá</div>
+                
+                <div class="modal-actions" style="display: flex; gap: 1rem; margin: 1rem 0;">
+                    <button id="addToCartBtn" class="action-btn" style="padding: 0.8rem 1.5rem; background: var(--panel-bg); color: #fff; border: 1px solid var(--accent-color); border-radius: 8px; cursor: pointer; transition: 0.3s; flex: 1;">🛒 Thêm vào giỏ hàng</button>
+                    <button id="buyNowBtn" class="action-btn primary-btn" style="padding: 0.8rem 1.5rem; background: linear-gradient(135deg, var(--accent-color), #818cf8); color: #fff; border: none; border-radius: 8px; cursor: pointer; transition: 0.3s; flex: 1;">💳 Mua ngay</button>
+                </div>
+
+                <p id="modalDescription" class="modal-main-desc">Mô tả chi tiết...</p>
+                
+                <div class="modal-extra-details">
+                    <div class="detail-section" id="sectionHistory">
+                        <h3>📜 Lịch sử phát triển</h3>
+                        <p id="modalHistory">Đang cập nhật...</p>
+                    </div>
+                    <div class="detail-section" id="sectionIngredients">
+                        <h3>🌿 Thành phần / Nguyên liệu</h3>
+                        <p id="modalIngredients">Đang cập nhật...</p>
+                    </div>
+                    <div class="detail-section" id="sectionStructure">
+                        <h3>⚙️ Cấu tạo / Cách làm</h3>
+                        <p id="modalStructure">Đang cập nhật...</p>
+                    </div>
+                    <div class="detail-section" id="sectionUsage">
+                        <h3>✨ Tác dụng / Ý nghĩa</h3>
+                        <p id="modalUsage">Đang cập nhật...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="user.js"></script>
     <script src="detail.js?v=2"></script>
 </body>
 </html>

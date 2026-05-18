@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tài Khoản - Khám Phá Văn Hóa</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        .auth-container {
+            max-width: 400px;
+            margin: 4rem auto;
+            background: var(--panel-bg);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .auth-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .auth-tab {
+            flex: 1;
+            text-align: center;
+            padding: 1rem;
+            cursor: pointer;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+        .auth-tab.active {
+            color: var(--accent-color);
+            border-bottom: 2px solid var(--accent-color);
+        }
+        .auth-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .auth-form.hidden {
+            display: none;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .form-group label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        .form-group input {
+            padding: 0.8rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(0,0,0,0.2);
+            color: white;
+        }
+        .submit-btn {
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--accent-color), #818cf8);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <div class="auth-container">
+            <div class="auth-header">
+                <div class="auth-tab active" id="tabLogin" onclick="switchTab('login')">Đăng nhập</div>
+                <div class="auth-tab" id="tabRegister" onclick="switchTab('register')">Đăng ký</div>
+            </div>
+
+            <form id="loginForm" class="auth-form" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label>Tên đăng nhập</label>
+                    <input type="text" id="loginUsername" required>
+                </div>
+                <div class="form-group">
+                    <label>Mật khẩu</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit" class="submit-btn">Đăng nhập</button>
+            </form>
+
+            <form id="registerForm" class="auth-form hidden" onsubmit="handleRegister(event)">
+                <div class="form-group">
+                    <label>Tên đăng nhập</label>
+                    <input type="text" id="regUsername" required>
+                </div>
+                <div class="form-group">
+                    <label>Mật khẩu</label>
+                    <input type="password" id="regPassword" required>
+                </div>
+                <div class="form-group">
+                    <label>Xác nhận mật khẩu</label>
+                    <input type="password" id="regConfirm" required>
+                </div>
+                <button type="submit" class="submit-btn">Đăng ký</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="user.js"></script>
+    <script>
+        function switchTab(tab) {
+            document.getElementById('tabLogin').classList.toggle('active', tab === 'login');
+            document.getElementById('tabRegister').classList.toggle('active', tab === 'register');
+            document.getElementById('loginForm').classList.toggle('hidden', tab === 'register');
+            document.getElementById('registerForm').classList.toggle('hidden', tab === 'login');
+        }
+
+        function handleRegister(e) {
+            e.preventDefault();
+            const u = document.getElementById('regUsername').value;
+            const p = document.getElementById('regPassword').value;
+            const c = document.getElementById('regConfirm').value;
+
+            if (p !== c) return alert('Mật khẩu không khớp!');
+            
+            const usersStr = localStorage.getItem('usersDB') || '[]';
+            const users = JSON.parse(usersStr);
+            if (users.find(user => user.username === u)) {
+                return alert('Tên đăng nhập đã tồn tại!');
+            }
+
+            users.push({ username: u, password: p, cart: [], history: [] });
+            localStorage.setItem('usersDB', JSON.stringify(users));
+            alert('Đăng ký thành công!');
+            switchTab('login');
+        }
+
+        function handleLogin(e) {
+            e.preventDefault();
+            const u = document.getElementById('loginUsername').value;
+            const p = document.getElementById('loginPassword').value;
+
+            const usersStr = localStorage.getItem('usersDB') || '[]';
+            const users = JSON.parse(usersStr);
+            const user = users.find(user => user.username === u && user.password === p);
+
+            if (user) {
+                localStorage.setItem('currentUser', JSON.stringify({username: user.username}));
+                window.location.href = 'index.html';
+            } else {
+                alert('Sai tên đăng nhập hoặc mật khẩu!');
+            }
+        }
+    </script>
+</body>
+</html>
