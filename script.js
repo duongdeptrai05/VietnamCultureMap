@@ -3,7 +3,7 @@ const regionData = {
     "trung-du-mien-nui-bac": {
         id: "trung-du-mien-nui-bac",
         name: "Trung du và Miền núi phía Bắc",
-        image_url: "https://images.unsplash.com/photo-1559592413-7ce4f0a048ac?q=80&w=1000&auto=format&fit=crop",
+        image_url: "Anh/Trung du và Miền núi phía Bắc.jpg",
         cities: ["Lào Cai", "Yên Bái", "Tuyên Quang", "Cao Bằng", "Hà Giang", "Lai Châu", "Điện Biên"],
         location: "Phía Tây Bắc của Việt Nam, sát biên giới với Lào và Trung Quốc",
         geography: "Địa hình núi non hùng vĩ, cao nhất là Phan Xi Păng (3,143m). Ít bằng phẳng, có hệ thống sông suối dốc, mưa nhiều, khí hậu mát mẻ, độ cao từ 600-2000m",
@@ -25,7 +25,7 @@ const regionData = {
     "bac-trung-bo-duyen-hai": {
         id: "bac-trung-bo-duyen-hai",
         name: "Bắc Trung Bộ và Duyên hải miền Trung",
-        image_url: "https://images.unsplash.com/photo-1542651052-bd5a77f9c00b?q=80&w=1000&auto=format&fit=crop",
+        image_url: "Anh/Bắc Trung Bộ và Duyên hải miền Trung.jpg",
         cities: ["Thanh Hóa", "Nghệ An", "Hà Tĩnh", "Quảng Bình", "Quảng Trị", "Thừa Thiên-Huế", "Đà Nẵng"],
         location: "Ở giữa Việt Nam, dãy trường Sơn từ Tây sang Đông, ven biển Đông",
         geography: "Phía Tây là dãy Trường Sơn cao 1000-2000m, phía Đông là đồng bằng ven biển hẹp, ít bằng phẳng. Biển dài, nhiều cảng tự nhiên tốt. Khí hậu tropical, mưa nhiều",
@@ -36,7 +36,7 @@ const regionData = {
     "tay-nguyen": {
         id: "tay-nguyen",
         name: "Tây Nguyên",
-        image_url: "https://images.unsplash.com/photo-1625404169206-8d1e389d4dc5?q=80&w=1000&auto=format&fit=crop",
+        image_url: "Anh/Tây Nguyên.jpg",
         cities: ["Kon Tum", "Gia Lai", "Đắk Lắk", "Đắk Nông", "Lâm Đồng"],
         location: "Vùng cao nguyên ở Trung Bộ, dãy Trường Sơn phía Nam",
         geography: "Cao nguyên đất đỏ bazan cao 600-1000m, địa hình lươn sóng, rừng thưa, khí hậu mát mẻ. Có sông Sê Rêpôk, sông Ba chảy qua. Đất màu mỡ, phù hợp trồng cà phê",
@@ -47,7 +47,7 @@ const regionData = {
     "dong-nam-bo": {
         id: "dong-nam-bo",
         name: "Đông Nam Bộ",
-        image_url: "https://images.unsplash.com/photo-1548868783-09988cfa4e97?q=80&w=1000&auto=format&fit=crop",
+        image_url: "Anh/Đông Nam Bộ.webp",
         cities: ["Hồ Chí Minh", "Bình Dương", "Đồng Nai", "Bà Rịa-Vũng Tàu", "Long An", "Tiền Giang", "Bến Tre"],
         location: "Phía Đông Nam của Việt Nam, ven Vịnh Thái Lan, là cổng ra Biển Đông",
         geography: "Đồng bằng bằng phẳng, có đề cao chỗ, ít sông suối lớn. Sông Sài Gòn, Đồng Nai chảy qua. Đất đỏ bazan, đất cát. Khí hậu tropical, mưa hè nhiều, nóng ẩm",
@@ -58,7 +58,7 @@ const regionData = {
     "dong-bang-song-cuu-long": {
         id: "dong-bang-song-cuu-long",
         name: "Đồng bằng sông Cửu Long",
-        image_url: "https://images.unsplash.com/photo-1583417657208-de0c96eb8e62?q=80&w=1000&auto=format&fit=crop",
+        image_url: "Anh/Đồng bằng sông Cửu Long.jpg",
         cities: ["Cần Thơ", "Kiên Giang", "An Giang", "Cà Mau", "Bạc Liêu", "Sóc Trăng", "Hậu Giang", "Trà Vinh"],
         location: "Phía Tây Nam của Việt Nam, vùng đồng bằng sông Mekong (Cửu Long)",
         geography: "Đồng bằng phù sa thấp, nhiều sông nhánh, kênh rạch chằng chịt, nước ngập một phần năm. Đất màu mỡ, cây cối um tùm, nhiều cây ăn trái. Khí hậu tropical, mưa hè",
